@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grokipedia Extension Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #4285f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        a:hover {
+            background: #357ae8;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 3px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grokipedia Extension Test Page</h1>
+    
+    <div class="note">
+        <strong>Note:</strong> When you click these links with the Grokipedia extension installed, 
+        they should redirect to grok.com instead of wikipedia.org
+    </div>
+
+    <div class="test-section">
+        <h2>Test Links</h2>
+        <p>Click any of these Wikipedia links to test the redirect:</p>
+        
+        <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">
+            English Wikipedia - Main Page
+        </a>
+        
+        <a href="https://en.wikipedia.org/wiki/Chrome_extension" target="_blank">
+            English Wikipedia - Chrome Extension Article
+        </a>
+        
+        <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada" target="_blank">
+            Spanish Wikipedia - Main Page
+        </a>
+        
+        <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" target="_blank">
+            French Wikipedia - Main Page
+        </a>
+        
+        <a href="https://de.wikipedia.org/wiki/Wikipedia:Hauptseite" target="_blank">
+            German Wikipedia - Main Page
+        </a>
+    </div>
+
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li><code>https://en.wikipedia.org/wiki/Main_Page</code> → <code>https://grok.com/en/wiki/Main_Page</code></li>
+            <li><code>https://es.wikipedia.org/wiki/Wikipedia:Portada</code> → <code>https://grok.com/es/wiki/Wikipedia:Portada</code></li>
+            <li>All language variants should be preserved</li>
+            <li>All path components should be preserved</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>Open Chrome and navigate to <code>chrome://extensions/</code></li>
+            <li>Enable "Developer mode" (toggle in top-right)</li>
+            <li>Click "Load unpacked"</li>
+            <li>Select the grokipedia-ext directory</li>
+            <li>Return to this page and test the links above</li>
+        </ol>
+    </div>
+</body>
+</html>

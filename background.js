@@ -19,7 +19,8 @@ chrome.webNavigation.onBeforeNavigate.addListener(
         const path = url.pathname + url.search + url.hash;
         
         // Construct the Grokipedia URL
-        // Assuming Grokipedia uses grok.com/wiki or similar pattern
+        // Format: https://grok.com/{language_code}{wikipedia_path}
+        // Example: en.wikipedia.org/wiki/Article -> grok.com/en/wiki/Article
         const grokipediaUrl = `https://grok.com/${lang}${path}`;
         
         // Redirect to Grokipedia

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Automatically redirects Wikipedia links to Grokipedia",
   "permissions": [
-    "webRequest",
     "webNavigation"
   ],
   "host_permissions": [

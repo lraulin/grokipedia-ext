@@ -43,7 +43,6 @@ The redirect happens before the Wikipedia page loads, providing a seamless exper
 
 This extension requires the following permissions:
 
-- `webRequest` - To intercept navigation requests
 - `webNavigation` - To detect when users navigate to Wikipedia URLs
 - `host_permissions` for `*.wikipedia.org` - To access Wikipedia URLs for redirection
 
