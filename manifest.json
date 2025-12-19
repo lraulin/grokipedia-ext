@@ -7,7 +7,7 @@
     "webNavigation"
   ],
   "host_permissions": [
-    "*://*.wikipedia.org/*"
+    "https://*.wikipedia.org/*"
   ],
   "background": {
     "service_worker": "background.js"
