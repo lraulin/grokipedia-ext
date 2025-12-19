@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Grokipedia Extension Icon Generator</title>
+  </head>
+  <body>
+    <h1>Grokipedia Extension Icon Generator</h1>
+    <p>Click the button below to generate and download the extension icons.</p>
+    <button onclick="generateIcons()">Generate Icons</button>
+    <div id="status"></div>
+
+    <script>
+      function generateIcons() {
+        const sizes = [16, 48, 128];
+        const statusDiv = document.getElementById("status");
+        statusDiv.innerHTML = "Generating icons...<br>";
+
+        sizes.forEach((size) => {
+          const canvas = document.createElement("canvas");
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext("2d");
+
+          // Draw blue background
+          ctx.fillStyle = "#4285f4";
+          ctx.fillRect(0, 0, size, size);
+
+          // Draw white 'G'
+          ctx.fillStyle = "white";
+          ctx.font = `bold ${Math.floor(size * 0.7)}px Arial`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("G", size / 2, size / 2);
+
+          // Download the icon
+          canvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `icon${size}.png`;
+            a.click();
+            URL.revokeObjectURL(url);
+            statusDiv.innerHTML += `✓ Generated icon${size}.png<br>`;
+          });
+        });
+
+        setTimeout(() => {
+          statusDiv.innerHTML +=
+            "<br><strong>All icons generated! Save them to the icons/ directory.</strong>";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

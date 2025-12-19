@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Grokipedia Redirect",
+  "version": "1.0.0",
+  "description": "Automatically redirects Wikipedia links to Grokipedia",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.wikipedia.org/*",
+    "*://*.grokipedia.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Grokipedia Redirect"
+  }
+}
+
